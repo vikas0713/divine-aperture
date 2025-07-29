@@ -1,0 +1,309 @@
+/* Divine Aperture - Juno4 Inspired Design */
+
+:root {
+  --color-primary: #1a1a1a;
+  --color-secondary: #f8f9fa;
+  --color-accent: #007bff;
+  --color-text: #333;
+  --color-text-light: #666;
+  --color-white: #ffffff;
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-secondary: 'Playfair Display', serif;
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-white);
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.hero-title .highlight {
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.hero-subtitle {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 300;
+  color: var(--color-text-light);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+/* Header & Navigation */
+.header-bar {
+  background: var(--color-white);
+  border-right: 1px solid #eee;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 991.98px) {
+  .header-bar {
+    background: var(--color-white);
+    border-bottom: 1px solid #eee;
+    border-right: none;
+  }
+}
+
+.header-bar .site-logo a {
+  color: var(--color-primary);
+  font-family: var(--font-secondary);
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: none;
+}
+
+.header-bar ul li a {
+  color: var(--color-text);
+  text-transform: none;
+  font-weight: 400;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.header-bar ul li a:hover,
+.header-bar ul li a.active {
+  color: var(--color-accent);
+}
+
+/* Hero Section */
+.site-section-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  position: relative;
+}
+
+.site-section-hero:before {
+  display: none;
+}
+
+.hero-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hero-actions {
+  margin-top: 2rem;
+}
+
+/* Buttons */
+.btn {
+  border: none;
+  border-radius: 0;
+  padding: 1rem 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Gallery Section */
+.photos {
+  padding: 5rem 0;
+}
+
+.photos .photo-item {
+  margin-bottom: 1rem;
+  overflow: hidden;
+  position: relative;
+  border-radius: 4px;
+}
+
+.photos .photo-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.photos .photo-item:hover img {
+  transform: scale(1.05);
+}
+
+.photos .photo-item:after {
+  background: rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.photos .photo-item:hover:after {
+  opacity: 1;
+}
+
+.photos .photo-item .photo-text-more {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.8);
+  transition: all 0.3s ease;
+}
+
+.photos .photo-item:hover .photo-text-more {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* About Section */
+.site-section.darken-bg {
+  background: var(--color-secondary);
+  padding: 5rem 0;
+}
+
+.site-section.darken-bg:before {
+  display: none;
+}
+
+.site-section .heading {
+  font-family: var(--font-secondary);
+  color: var(--color-primary);
+  font-size: clamp(2rem, 4vw, 3rem);
+  text-transform: none;
+  margin-bottom: 2rem;
+}
+
+/* Blog Section */
+.blog-entry h2 a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.blog-entry h2 a:hover {
+  color: var(--color-accent);
+}
+
+.blog-entry .meta {
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+}
+
+/* Contact Section */
+.form-control {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0;
+  background: transparent;
+  color: var(--color-text);
+  padding: 0.75rem 0;
+}
+
+.form-control:focus {
+  background: transparent;
+  border-color: var(--color-accent);
+  box-shadow: none;
+  color: var(--color-text);
+}
+
+label {
+  color: var(--color-text) !important;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 0 1rem;
+  }
+  
+  .photos .photo-item img {
+    height: 250px;
+  }
+  
+  .site-section {
+    padding: 3rem 0;
+  }
+}
+
+/* Animation improvements */
+[data-aos] {
+  transition-duration: 0.8s;
+}
+
+/* Main content adjustments for minimalist design */
+.main-content {
+  background: var(--color-white);
+}
+
+/* Social icons styling */
+.header-bar ul.social li a {
+  color: var(--color-text-light);
+  transition: color 0.3s ease;
+}
+
+.header-bar ul.social li a:hover {
+  color: var(--color-accent);
+}
+
+/* Remove dark theme elements for clean look */
+.site-section {
+  background: var(--color-white);
+}
+
+.site-section h2.heading {
+  color: var(--color-primary);
+}
+
+/* Testimonial section adjustments */
+.testimony {
+  color: var(--color-text);
+}
+
+.testimony p {
+  color: var(--color-text) !important;
+}
+
+.testimony blockquote p {
+  color: var(--color-text-light) !important;
+}
